@@ -25,7 +25,7 @@ public class ConfigDrivenWorkflowBranchProjectFactory extends AbstractWorkflowBr
     public static final String PIPELINE_TEMPLATE = "pipeline_template";
 
     private String scriptPath = USER_DEFINITION_PATH;
-    private String pipelinePath = USER_DEFINITION_PIPELINE_PATH;
+    private String pipelinePath = DEFAULT_PIPELINE_TEMPLATE_PATH;
     private SCM jenkinsFileScm = null;
 
     public Object readResolve() {
@@ -33,7 +33,7 @@ public class ConfigDrivenWorkflowBranchProjectFactory extends AbstractWorkflowBr
             this.scriptPath = USER_DEFINITION_PATH;
         }
         if (this.pipelinePath == null) {
-            this.pipelinePath = USER_DEFINITION_PIPELINE_PATH;
+            this.pipelinePath = DEFAULT_PIPELINE_TEMPLATE_PATH;
         }
         return this;
     }
@@ -50,7 +50,7 @@ public class ConfigDrivenWorkflowBranchProjectFactory extends AbstractWorkflowBr
     @DataBoundSetter
     public void setPipelinePath(String pipelinePath) {
         if (StringUtils.isEmpty(pipelinePath)) {
-            this.pipelinePath = USER_DEFINITION_PIPELINE_PATH;
+            this.pipelinePath = DEFAULT_PIPELINE_TEMPLATE_PATH;
         } else {
             this.pipelinePath = pipelinePath;
         }

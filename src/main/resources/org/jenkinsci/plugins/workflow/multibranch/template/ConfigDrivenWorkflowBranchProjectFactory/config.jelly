@@ -29,7 +29,7 @@ THE SOFTWARE.
     <f:entry title="${%Config File Path}" field="scriptPath">
         <f:textbox default=".yourconfig.yml"/>
     </f:entry>
-    <f:entry title="${%Default Pipeline Template Path}" field="defaultPipelinePath">
+    <f:entry title="${%Default Pipeline Template Path}" field="pipelinePath">
         <f:textbox default="Jenkinsfile"/>
     </f:entry>
 

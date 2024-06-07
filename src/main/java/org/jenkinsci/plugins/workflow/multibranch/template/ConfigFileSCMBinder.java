@@ -54,9 +54,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-import static org.jenkinsci.plugins.workflow.multibranch.template.ConfigDrivenWorkflowBranchProjectFactory.PIPELINE_TEMPLATE;
 import static org.jenkinsci.plugins.workflow.multibranch.template.ConfigDrivenWorkflowBranchProjectFactory.USER_DEFINITION_PATH;
-import static org.jenkinsci.plugins.workflow.multibranch.template.ConfigDrivenWorkflowBranchProjectFactory.USER_DEFINITION_PIPELINE_PATH;
+import static org.jenkinsci.plugins.workflow.multibranch.template.ConfigDrivenWorkflowBranchProjectFactory.DEFAULT_PIPELINE_TEMPLATE_PATH;
 
 /**
  * Checks out the desired version of {@link ConfigDrivenWorkflowBranchProjectFactory#USER_DEFINITION_PATH}.
@@ -72,7 +71,7 @@ class ConfigFileSCMBinder extends FlowDefinition {
             this.scriptPath = USER_DEFINITION_PATH;
         }
         if (this.pipelinePath == null) {
-            this.pipelinePath = USER_DEFINITION_PIPELINE_PATH;
+            this.pipelinePath = DEFAULT_PIPELINE_TEMPLATE_PATH;
         }
         return this;
     }
